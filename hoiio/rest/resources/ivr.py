@@ -28,6 +28,11 @@ class IVR(Resource):
         method_uri = self.get_method_uri('middle/record')
         return self.request(method='get', uri=method_uri, data=cleaned_params)
         
+    def monitor(self, params={}):
+        cleaned_params = self.sanitize(params)
+        method_uri = self.get_method_uri('middle/monitor')
+        return self.request(method='get', uri=method_uri, data=cleaned_params)
+        
     # End
     
     def transfer(self, params={}):
